@@ -50,6 +50,7 @@ export default class SinglePlayerTwoWindows extends Component {
                     onPlay={this.props.onPlay}
                     onPause={this.props.onPause}
                     onEnd={this.props.onEnd}
+					onGameEvent={this.props.onGameEvent}
                 />
                 <div id={"game0"} style={this.getGameWrapperStyles()}><Stage style={this.getGameStyles()}>
                     <Tile tiles={this.props.gameData.config.game1.tiles}/>
@@ -69,6 +70,7 @@ export default class SinglePlayerTwoWindows extends Component {
                         gameId={0}
                         type={this.props.gameData.config.game1.character.type}
                         keys={this.props.gameData.player1Keys}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {(this.props.gameData.player=="player2"&&this.props.gameData.mode=="player-vs-bot"
                     ||this.props.gameData.mode=="bot-vs-bot")&&
@@ -79,6 +81,7 @@ export default class SinglePlayerTwoWindows extends Component {
                         showCodeEditor={this.props.gameData.showCodeEditor}
                         player1Function={this.props.player1Function}
                         onError={this.props.onError}
+						onGameEvent={this.props.onGameEvent}
                     />}
                 </Stage></div>
                 <div id={"game1"} style={this.getGameWrapperStyles()}><Stage style={this.getGameStyles()}>
@@ -100,6 +103,7 @@ export default class SinglePlayerTwoWindows extends Component {
                         charId={0}
                         type={this.props.gameData.config.game2.character.type}
                         keys={this.props.gameData.player2Keys}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {(this.props.gameData.player=="player1"&&this.props.gameData.mode=="player-vs-bot"
                     ||this.props.gameData.mode=="bot-vs-bot")&&
@@ -111,6 +115,7 @@ export default class SinglePlayerTwoWindows extends Component {
                         showCodeEditor={this.props.gameData.showCodeEditor}
                         player2Function={this.props.player2Function}
                         onError={this.props.onError}
+						onGameEvent={this.props.onGameEvent}
                     />}
                 </Stage></div>
             </Loop>

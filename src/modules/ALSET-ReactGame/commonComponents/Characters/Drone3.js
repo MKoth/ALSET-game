@@ -3,7 +3,7 @@ import Sprite from './Sprite';
 import { observer } from 'mobx-react';
 import img from "../../commonGameAssets/characters/drone3.png";
 
-class Drone2 extends Component {
+class Drone3 extends Component {
     getAnimationState(){
         switch(this.props.direction){
             case 'up':

@@ -4,8 +4,8 @@ import squadConfig from '../defaultConfig/squadConfig.json';
 class squadStore{
 	constructor(){
 		extendObservable(this, {
-			time = squadConfig.time;
-			position = [
+			time : squadConfig.time,
+			position : [
 				[
 					squadConfig.game1.character1.startingPoint,
 					squadConfig.game1.character2.startingPoint
@@ -13,15 +13,15 @@ class squadStore{
 					squadConfig.game2.character1.startingPoint,
 					squadConfig.game2.character2.startingPoint
 				]
-			];
-			direction = [['left','up'],['left','up']];
-			currentControllable = [1,1];
-			collectives = [[],[]];
-			timeStampData = Date.now();
-			score = [0,0];
-			mode = "play";
-			func = false;
-			funcNeedUpdate = false;
+			],
+			direction : [['left','up'],['left','up']],
+			currentControllable : [1,1],
+			collectives : [[],[]],
+			timeStampData : Date.now(),
+			score : [0,0],
+			mode : "play",
+			func : false,
+			funcNeedUpdate : false
 		})
 	}
     moveCharacter(gameId, characterId){

@@ -4,18 +4,18 @@ import twoWinConfig from '../defaultConfig/singlePlayerTwoWindowsConfig.json';
 class singlePlayerTwoWindowsStore{
 	constructor(){
 		extendObservable(this, {
-			time = twoWinConfig.time;
-			position = [
+			time : twoWinConfig.time,
+			position : [
 				twoWinConfig.game1.character.startingPoint,
 				twoWinConfig.game2.character.startingPoint
-			];
-			direction = ['left','up'];
-			collectives = [[],[]];
-			timeStampData = Date.now();
-			score = [0,0];
-			mode = "play";
-			func = false;
-			funcNeedUpdate = false;
+			],
+			direction : ['left','up'],
+			collectives : [[],[]],
+			timeStampData : Date.now(),
+			score : [0,0],
+			mode : "play",
+			func : false,
+			funcNeedUpdate : false
 		})
 	}
     

@@ -48,6 +48,7 @@ export default class GemCollector extends Component {
                     onPlay={this.props.onPlay}
                     onPause={this.props.onPause}
                     onEnd={this.props.onEnd}
+					onGameEvent={this.props.onGameEvent}
                 />
                 <div id={"game0"} style={this.getGameWrapperStyles()}><Stage style={this.getGameStyles()}>
                     <Tile tiles={this.props.gameData.config.game.tiles}/>
@@ -67,12 +68,14 @@ export default class GemCollector extends Component {
                         charId={0}
                         type={this.props.gameData.config.game.character1.type}
                         keys={this.props.gameData.player1Keys}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {this.props.gameData.mode=="player-vs-player"&&
                     <Character
                         charId={1}
                         type={this.props.gameData.config.game.character2.type}
                         keys={this.props.gameData.player2Keys}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {this.props.gameData.mode=="player-vs-bot"&&
                     <Bot
@@ -82,6 +85,7 @@ export default class GemCollector extends Component {
                         showCodeEditor={this.props.gameData.showCodeEditor}
                         player1Function={this.props.player1Function}
                         onError={this.props.onError}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {(this.props.gameData.mode=="bot-vs-bot")&&
                     <Bot
@@ -91,6 +95,7 @@ export default class GemCollector extends Component {
                         showCodeEditor={this.props.gameData.showCodeEditor}
                         player1Function={this.props.player1Function}
                         onError={this.props.onError}
+						onGameEvent={this.props.onGameEvent}
                     />}
                     {(this.props.gameData.mode=="bot-vs-bot")&&
                     <Bot
@@ -100,6 +105,7 @@ export default class GemCollector extends Component {
                         showCodeEditor={this.props.gameData.showCodeEditor}
                         player2Function={this.props.player2Function}
                         onError={this.props.onError}
+						onGameEvent={this.props.onGameEvent}
                     />}
                 </Stage></div>
                 

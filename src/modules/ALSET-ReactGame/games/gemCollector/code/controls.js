@@ -32,13 +32,21 @@ class Controls extends Component {
     pauseResumeGame(){
         if(Store.mode=='pause'){
             Store.mode='play';
-            if(this.props.onPlay)
+            if(this.props.onPlay){
                 this.props.onPlay();
+				this.props.onGameEvent({
+                    type : "play"
+				});
+			}
         }
         else{
             Store.mode='pause';
-            if(this.props.onPause)
-                this.props.onPause();
+            if(this.props.onPause){
+				this.props.onPause();
+				this.props.onGameEvent({
+                    type : "pause"
+                })
+			}
         }
     }
 
@@ -49,6 +57,9 @@ class Controls extends Component {
             if(this.props.onPlay)
                 this.props.onPlay();
         },1000)
+		this.props.onGameEvent({
+            type : "restart"
+        })
     }
 	
 	getWrapperStyles(){

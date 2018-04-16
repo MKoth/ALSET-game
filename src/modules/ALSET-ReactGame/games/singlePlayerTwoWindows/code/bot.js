@@ -75,9 +75,13 @@ class Character extends Component {
         player = player.childNodes[0];
         var collectives = parentEl.getElementsByClassName('collective');
         Array.from(collectives).forEach(collective => {
-            if(Util.rect2Rect(collective, player)){
+			if(Util.rect2Rect(collective, player)){
                 var collectiveId = collective.getAttribute("data-key");
-                Store.removeCollective(this.props.gameId,collectiveId);
+                Store.removeCollective(this.props.charId,collectiveId);
+				this.props.onGameEvent({
+                    type : 'score_update',
+                    scores: Store.score
+                })
             }
         });
     }

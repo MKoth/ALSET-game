@@ -4,18 +4,18 @@ import gemCollectorConfig from '../defaultConfig/gemCollectorConfig.json';
 class gemCollectorStore{
 	constructor(){
 		extendObservable(this, {
-			time = gemCollectorConfig.time;
-			position = [
+			time : gemCollectorConfig.time,
+			position : [
 				gemCollectorConfig.game.character1.startingPoint,
 				gemCollectorConfig.game.character2.startingPoint
-			];
-			direction = ['left','up'];
-			collectives = [];
-			timeStampData = Date.now();
-			score = [0,0];
-			mode = "play";
-			func = false;
-			funcNeedUpdate = false;
+			],
+			direction : ['left','up'],
+			collectives : [],
+			timeStampData : Date.now(),
+			score : [0,0],
+			mode : "play",
+			func : false,
+			funcNeedUpdate : false
 		})
 	}
     moveCharacter(characterId){

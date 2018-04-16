@@ -68,6 +68,10 @@ class Character extends Component {
             if(Util.rect2Rect(collective, player)){
                 var collectiveId = collective.getAttribute("data-key");
                 Store.removeCollective(this.props.gameId,collectiveId);
+				this.props.onGameEvent({
+                    type : 'score_update',
+                    scores: Store.score
+                })
             }
         });
     }
